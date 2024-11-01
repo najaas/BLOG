@@ -7,17 +7,20 @@ const CombinedBlogLanding = ({ onLogout = () => {}, onNavigate = () => {} }) => 
     {
       _id: 1,
       title: "First Blog Post",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      content: "The question of comparison in fact raises ethical issues about the use, purpose and regulation of AI.",
+      image: "https://www.polytechnique-insights.com/wp-content/uploads/2024/01/ia-ih-foncee-1049x600.jpg"
     },
     {
       _id: 2,
       title: "Second Blog Post",
-      content: "Sed do eiusmod tempor incididunt ut labore et dolore."
+      content: "Highly Correlated Features Removal.",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyPi7pd-qaVYRKwgIKvvQfJxvgwkI85UmZIQ&s"
     },
     {
       _id: 3,
       title: "Third Blog Post",
-      content: "Ut enim ad minim veniam, quis nostrud exercitation."
+      content: "Saving lives, one selfie at a time.",
+      image:"https://wps03-media.cdn.ihealthspot.com/wp-content/uploads/sites/13/2024/01/iStock-1461330630-2.jpg"
     }
   ]);
 
@@ -79,7 +82,7 @@ const CombinedBlogLanding = ({ onLogout = () => {}, onNavigate = () => {} }) => 
                 onClick={() => handleBlogClick(blog._id)}
               >
                 <img
-                  src="/api/placeholder/400/300"
+                  src={blog.image || "/api/placeholder/400/300"}
                   alt={blog.title}
                   className="w-full h-48 object-cover"
                 />
