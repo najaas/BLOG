@@ -40,7 +40,6 @@ console.log(comment)
         </div>
       ))}
 
-      {/* Button to show comment form */}
       {user && (
         <button 
           onClick={() => setShowCommentForm((prev) => !prev)} 
@@ -51,12 +50,11 @@ console.log(comment)
         </button>
       )}
 
-      {/* Conditionally render the CommentForm */}
       {showCommentForm && user && (
         <CommentForm 
           blogId={id} 
           addComment={addComment} 
-          onClose={() => setShowCommentForm(false)} // Pass onClose to close the form
+          onClose={() => setShowCommentForm(false)} 
         />
       )}
     </div>

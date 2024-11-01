@@ -33,7 +33,6 @@ const Login = () => {
               alt="Welcome back, you've been missed!"
             />
           </div>
-          {/* Form Section */}
           <div className="md:w-1/2 p-6 md:p-8 lg:p-10 flex items-center justify-center">
             <div className="w-full max-w-md">
               <div className="text-center mb-8">
@@ -66,7 +65,7 @@ const Login = () => {
                     className="form-input w-full p-3 border rounded-lg border-gray-300 placeholder-gray-400 focus:outline-none focus:ring focus:ring-indigo-200"
                   />
                 </div>
-                <div className="flex items-center">
+                {/* <div className="flex items-center">
                   <input
                     type="checkbox"
                     id="remember_me"
@@ -74,7 +73,7 @@ const Login = () => {
                     className="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-200"
                   />
                   <label htmlFor="remember_me" className="ml-2 text-gray-600">Keep me logged in</label>
-                </div>
+                </div> */}
                 <div>
                   <button
                     type="submit"

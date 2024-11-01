@@ -16,7 +16,7 @@ const Register = () => {
       navigate("/login");
     } catch (error) {
       console.log(error);
-      setError("Registration failed. Please try again."); // Display error message if registration fails
+      setError("Registration failed. Please try again.");
     }
   };
 
@@ -24,7 +24,6 @@ const Register = () => {
     <section className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
       <div className="container mx-auto max-w-6xl bg-white shadow-md rounded-lg overflow-hidden">
         <div className="flex flex-col md:flex-row">
-          {/* Image Section */}
           <div className="md:w-1/2">
             <img
               className="object-cover w-full h-56 md:h-full"
@@ -33,11 +32,10 @@ const Register = () => {
               alt="Welcome, please register!"
             />
           </div>
-          {/* Form Section */}
           <div className="md:w-1/2 p-6 md:p-8 lg:p-10 flex items-center justify-center">
             <div className="w-full max-w-md">
               <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
-              {error && <p className="text-red-500 text-center mb-4">{error}</p>} {/* Display error message */}
+              {error && <p className="text-red-500 text-center mb-4">{error}</p>}
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="username" className="sr-only">Username</label>
