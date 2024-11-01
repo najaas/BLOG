@@ -1,10 +1,13 @@
 const Comment = require("../Model/CommentModel");
 
 const addComment = async (req, res) => {
-  try {
+
+
+  
+    try{
     const comment = await Comment.create({
       ...req.body,
-      author: req.user.id,
+      userId: req.user.id,
     });
     res.status(201).json(comment);
   } catch (error) {
@@ -14,8 +17,10 @@ const addComment = async (req, res) => {
 
 const getComments = async (req, res) => {
   try {
-    const comments = await Comment.find({ blog: req.params.blogId }).populate("author", "username");
-    console.log(comments)
+    // console.log(req.params.blogId)
+    
+    const comments = await Comment.find({ blogId: req.params.blogId }).populate("userId", "username");
+   
     res.json(comments);
   } catch (error) {
     res.status(400).json({ error: error.message });

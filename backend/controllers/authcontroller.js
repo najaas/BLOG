@@ -17,16 +17,17 @@ const login = async (req, res) => {
 
   try {
     const { email, password } = req.body;
-    console.log(req.body)
+   
     const user = await User.findOne({ email });
-    console
+   
     if (!user || !(await user.password==password)) {
       return res.status(400).json({ error: "Invalid email or password" });
     }
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "1h",
     });
-    res.json({ token });
+ 
+    res.json({ token});
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

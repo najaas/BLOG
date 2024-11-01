@@ -65,15 +65,6 @@ const Login = () => {
                     className="form-input w-full p-3 border rounded-lg border-gray-300 placeholder-gray-400 focus:outline-none focus:ring focus:ring-indigo-200"
                   />
                 </div>
-                {/* <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    id="remember_me"
-                    name="remember_me"
-                    className="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-200"
-                  />
-                  <label htmlFor="remember_me" className="ml-2 text-gray-600">Keep me logged in</label>
-                </div> */}
                 <div>
                   <button
                     type="submit"

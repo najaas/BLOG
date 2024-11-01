@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const CombinedBlogLanding = ({ onLogout = () => {}, onNavigate = () => {} }) => {
-  const [showBlogList, setShowBlogList] = useState(false); // Initialize the state
+  const [showBlogList, setShowBlogList] = useState(false);
   const [blogs, setBlogs] = useState([
     {
       _id: 1,
@@ -34,7 +34,7 @@ const CombinedBlogLanding = ({ onLogout = () => {}, onNavigate = () => {} }) => 
       <section className="relative h-[500px]">
         <div className="absolute inset-0">
           <img
-            src="/api/placeholder/1920/500"
+            src="https://cdn.vectorstock.com/i/1000x1000/58/95/blogging-letter-banner-flat-vector-23865895.webp"
             alt="Hero background"
             className="w-full h-full object-cover"
           />
@@ -47,7 +47,7 @@ const CombinedBlogLanding = ({ onLogout = () => {}, onNavigate = () => {} }) => 
           <p className="text-xl text-center max-w-2xl mb-8">
             Share your knowledge and experiences with our growing community
           </p>
-          <Link to="/">
+          <Link to="/bloglist">
             <button
               className="bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition-colors"
             > 

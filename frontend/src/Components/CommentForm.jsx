@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import API from "../Api";
+import axios from "axios"; // If you're using the default Axios import
 
-const CommentForm = ({ blogId, addComment, onClose }) => {
+
+const CommentForm = ({ blogId, addComment, onClose, }) => {
   const [content, setContent] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { data } = await API.post(`/comment/:${blogId}`, { blogId, content });
+
+    const { data } = await API.post(`/comment/${blogId}`, { blogId, content,});
     addComment(data);
+    
     setContent("");
     onClose(); // Close the form after submitting
   };

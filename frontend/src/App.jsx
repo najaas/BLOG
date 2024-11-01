@@ -3,7 +3,7 @@ import Login from "./Components/Login";
 import Register from "./Components/Register";
 import BlogList from "./Components/BlogList";
 import BlogDetail from "./Components/BlogDetail";
-import BlogForm from "./Components/BlogForm";
+import BlogForm from "./Components/Blogform";
 import AuthProvider from "./context/AuthContext";
 import Home from "./Components/Bloghome"
 
@@ -12,10 +12,10 @@ function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/" element={<BlogList />} />
+          <Route path="/bloglist" element={<BlogList />} />
           <Route path="/blog/:id" element={<BlogDetail />} />
           <Route path="/create" element={<BlogForm />} />
           <Route path="/edit/:id" element={<BlogForm />} />

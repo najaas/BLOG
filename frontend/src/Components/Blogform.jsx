@@ -2,20 +2,16 @@ import React, { useState, useEffect } from "react";
 import API from "../Api";
 import { useNavigate, useParams } from "react-router-dom";
 
-const BlogForm = () => {
+const BlogForm = ({ blog, onClose }) => { // Accept blog and onClose as props
   const [formData, setFormData] = useState({ title: "", content: "" });
   const navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
-    if (id) {
-      const fetchBlog = async () => {
-        const { data } = await API.get(`/blog/${id}`);
-        setFormData({ title: data.title, content: data.content });
-      };
-      fetchBlog();
+    if (blog) { // Check if blog is provided
+      setFormData({ title: blog.title, content: blog.content });
     }
-  }, [id]);
+  }, [blog]);
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -53,6 +49,13 @@ const BlogForm = () => {
             className="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 transition duration-200"
           >
             {id ? "Update" : "Create"}
+          </button>
+          <button 
+            type="button"
+            onClick={onClose}
+            className="w-full bg-gray-300 text-black py-2 rounded-md hover:bg-gray-400 transition duration-200"
+          >
+            Cancel
           </button>
         </form>
       </div>
